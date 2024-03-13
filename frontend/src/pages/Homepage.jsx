@@ -15,6 +15,7 @@ function Homepage() {
         const res = await fetch(`/api/users/profile/${username}`);
         const { repos, userProfile } = await res.json();
 
+        // sorting method
         repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)); //descending, recent first
 
         setRepos(repos);
