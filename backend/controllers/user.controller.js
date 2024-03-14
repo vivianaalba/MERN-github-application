@@ -1,4 +1,4 @@
-import User from "../models/user.model"
+import User from "../models/user.model.js"
 
 // a function that will allow us to pull other user information
 export const getUserProfileAndRepos = async (req, res) => {

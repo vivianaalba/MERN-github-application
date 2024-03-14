@@ -1,12 +1,14 @@
 import './App.css'
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+
+import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage";
+import Homepage from "./pages/Homepage";
+import LikesPage from "./pages/LikesPage";
+
 import Sidebar from "./components/Sidebar";
-import Homepage from './pages/Homepage';
-import LoginPage from './pages/LoginPage';
-import SignUpPage from './pages/SignUpPage';
-import LikesPage from './pages/LikesPage';
-import { useAuthContext } from './context/AuthContext';
+import { useAuthContext } from "./context/AuthContext";
 
 function App() {
   const { authUser, loading } = useAuthContext();
@@ -44,7 +46,7 @@ function App() {
 
       </div>
     </div>
-  )
+  );
 }
 
 export default App

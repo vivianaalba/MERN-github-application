@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-function Search({onSearch}) {
+export default function Search({onSearch}) {
     const [username, setUsername] = useState("");
   return (
     <form onSubmit={(e) => onSearch(e, username)}>
@@ -26,5 +26,3 @@ function Search({onSearch}) {
     </form>
   )
 }
-
-export default Search

@@ -5,6 +5,7 @@ import session from "express-session";
 import path from "path"; // comes from node
 import "./passport/github.auth.js";
 import authRoutes from "./routes/auth.routes.js";
+import userRoutes from "./routes/user.route.js";
 import connectMongoDB from "./db/connectMongoDB.js";
 
 console.log("Server is on.")
@@ -31,6 +32,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // set up middleware
+app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 
 // where to find static files - web pages, audio, images
