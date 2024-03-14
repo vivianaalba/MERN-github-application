@@ -1,6 +1,11 @@
 import React from 'react';
 import { useCallback, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import Search from '../components/Search';
+import SortRepo from '../components/SortRepo';
+import ProfileInfo from '../components/ProfileInfo';
+import Repos from '../components/Repos';
+import Spinner from '../components/Spinner';
 
 function Homepage() {
   const [userProfile, setUserProfile] = useState(null); // user is null until sought for
@@ -35,8 +40,10 @@ function Homepage() {
 	}, [getUserProfileAndRepos]);
 
   const onSearch = async (e, username) => {
+		// avoids reloading page so we do not lose data
 		e.preventDefault();
 
+		// state management
 		setLoading(true);
 		setRepos([]);
 		setUserProfile(null);
@@ -64,7 +71,7 @@ function Homepage() {
   return (
 		<div>
 			<Search onSearch={onSearch} />
-			{repos.length > 0 && <SortRepos onSort={onSort} sortType={sortType} />}
+			{repos.length > 0 && <SortRepo onSort={onSort} sortType={sortType} />}
 			<div>
 				{userProfile && !loading && <ProfileInfo userProfile={userProfile} />}
 				{!loading && <Repos repos={repos} />}
