@@ -21,21 +21,21 @@ const ProfileInfo = ({ userProfile }) => {
     const memberSince = formatMemberSince(userProfile?.created_at);
 
 	return (
-		<div>
-
-			<div>
-				<div>
+		<div className='lg:w-1/3 w-full flex flex-col gap-2 lg:sticky md:top-10 mx-auto'>
+			<div className='bg-glass rounded-lg p-4'>
+				<div className='flex gap-3 items-center'>
 					{/* User Avatar */}
                     <a href={userProfile?.html_url} target='_blank' rel='noreferrer'>
-                        <img src={userProfile?.avatar_url} alt='' />
+                        <img src={userProfile?.avatar_url} className='rounded-md w-24 h-24 mb-2' alt='' />
                     </a>
                     {/* View on Github */}
-                    <div>
+                    <div className='flex gap-2 items-center flex-col'>
                         <LikeProfile userProfile={userProfile} />
                         <a
                             href={userProfile?.html_url}
                             target='_blank'
                             rel='noreferrer'
+                            className='bg-glass font-medium w-full text-xs p-2 rounded-md cursor-pointer border border-blue-400 flex items-center gap-2'
                         >
                             View on Github
                         </a>
@@ -43,14 +43,14 @@ const ProfileInfo = ({ userProfile }) => {
 				</div>
 				{/* User Bio */}
                 {userProfile?.bio ? (
-                    <div>
-                        <p>{userProfile?.bio.substring(0, 60)}...</p>
+                    <div className='flex items-center gap-2'>
+                        <p className='text-sm'>{userProfile?.bio.substring(0, 60)}...</p>
                     </div>
                 ) : null}
 
 				{/* Location */}
                 {userProfile?.location ? (
-                    <div>
+                    <div className='flex items-center gap-2'>
                         {userProfile?.location}
                     </div>
                 ) : null}
@@ -61,29 +61,30 @@ const ProfileInfo = ({ userProfile }) => {
                         href={`https://twitter.com/${userProfile.twitter_username}`}
                         target='_blank'
                         rel='noreferrer'
+                        className='flex items-center gap-2 hover:text-sky-500'
                     >
                         {userProfile?.twitter_username}
                     </a>
                 ) : null}
 
 				{/* Member Since Date */}
-                <div>
-                    <p>Member since</p>
+                <div className='my-2'>
+                    <p className='text-gray-600 font-bold text-sm'>Member since</p>
                     <p>{memberSince}</p>
                 </div>
 
 				{/* Email Address */}
                 {userProfile?.email && (
-                    <div>
-                        <p>Email address</p>
+                    <div className='my-2'>
+                    <p className='text-gray-600 font-bold text-sm'>Email address</p>
                         <p>{userProfile.email}</p>
                     </div>
                 )}
 
 				{/* Full Name */}
                 {userProfile?.name && (
-                    <div>
-                        <p>Full name</p>
+                    <div className='my-2'>
+                    <p className='text-gray-600 font-bold text-sm'>Full name</p>
                         <p>{userProfile?.name}</p>
                     </div>
                 )}
@@ -95,25 +96,25 @@ const ProfileInfo = ({ userProfile }) => {
                 </div>
 			</div>
 			
-			<div>
+			<div className='flex flex-wrap gap-2 mx-4'>
 				{/* Followers Count */}
-                <div>
-                    <p>Followers: {userProfile?.followers}</p>
+                <div className='flex items-center gap-2 bg-glass rounded-lg p-2 flex-1 min-w-24'>
+                    <p className='text-xs'>Followers: {userProfile?.followers}</p>
                 </div>
 
 				{/* Following count */}
-                <div>
-                    <p>Following: {userProfile?.following}</p>
+                <div className='flex items-center gap-2 bg-glass rounded-lg p-2 flex-1 min-w-24'>
+                    <p className='text-xs'>Following: {userProfile?.following}</p>
                 </div>
 
 				{/* Number of public repos */}
-                <div>
-                    <p>Public repos: {userProfile?.public_repos}</p>
+                <div className='flex items-center gap-2 bg-glass rounded-lg p-2 flex-1 min-w-24'>
+                    <p className='text-xs'>Public repos: {userProfile?.public_repos}</p>
                 </div>
 
 				{/* Number of public gists */}
-                <div>
-                        <p>Public gists: {userProfile?.public_gists}</p>
+                <div className='flex items-center gap-2 bg-glass rounded-lg p-2 flex-1 min-w-24'>
+                    <p className='text-xs'>Public gists: {userProfile?.public_gists}</p>
                 </div>			 
 
 			</div>

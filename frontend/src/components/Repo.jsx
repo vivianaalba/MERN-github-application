@@ -15,33 +15,39 @@ function Repo({repo}) {
 	};
 
     return (
-    <li>
+<li className='mb-10 ms-7'>
         <span>
-            Branch Icon
+            Repositories
         </span>
-        <div>
+        <div className='flex gap-2 items-center flex-wrap'>
             <a
                 href={repo.html_url}
                 target='_blank'
                 rel='noreferrer'
+                className='flex items-center gap-2 text-lg font-semibold'
             >
                 {repo.name}
             </a>
-            <span>
+            <span className='bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5
+        py-0.5 rounded-full flex items-center gap-1'>
                 Stars: {repo.stargazers_count}
             </span>
-            <span>
+            <span className='bg-purple-100 text-purple-800 text-xs font-medium
+         px-2.5 py-0.5 rounded-full flex items-center gap-1'>
                 Forks: {repo.forks_count}
             </span>
             <span
-                onClick={() => handleCloneClick(repo)}>
+                onClick={() => handleCloneClick(repo)}
+                className='cursor-pointer bg-green-100 text-green-800 text-xs
+        font-medium px-2.5 py-0.5 rounded-full flex items-center gap-1'>
                 Click to Clone
             </span>
         </div>
-        <time>
+        <time className='block my-1 text-xs font-normal leading-none
+     text-gray-400'>
             Released on {formattedDate}
         </time>
-        <p>
+        <p className='mb-4 text-base font-normal text-gray-500'>
             {repo.description ? repo.description.slice(0, 500) : "No description provided"}
         </p>
         {PROGRAMMING_LANGUAGES[repo.language] ? (

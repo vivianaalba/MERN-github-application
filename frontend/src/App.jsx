@@ -1,4 +1,3 @@
-import './App.css'
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
@@ -15,10 +14,10 @@ function App() {
   if (loading) return null;
 
   return (
-    <div>
+    <div className='flex'>
       <Sidebar />
 
-      <div>
+      <div className='max-w-5xl my-5 text-white mx-auto transition-all duration-300 flex-1'>
         <Routes>
           <Route 
             path='/' 

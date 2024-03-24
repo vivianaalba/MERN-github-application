@@ -18,7 +18,10 @@ export default function Logout() {
 
     return (
     	<>
-			<div onClick={handleLogout}>
+			<div 
+				className='cursor-pointer flex items-center p-2 rounded-lg bg-glass mt-auto border border-gray-800'
+				onClick={handleLogout}
+			>
 				Logout
 			</div>
 		</>
