@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "run dev",
-    "dev" : "nodemon backend/server.js"
+    "dev" : "nodemon backend/server.js",
+    "build": "npm install && nom install --prefix frontend && nom run build --prefix frontend",
+    "start": "node backend/server.js"
   },
   "type": "module",
   "author": "Viviana Alba",
