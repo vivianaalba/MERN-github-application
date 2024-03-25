@@ -44,10 +44,10 @@ function Repo({repo}) {
             </span>
         </div>
         <time className='block my-1 text-xs font-normal leading-none
-     text-gray-400'>
+     text-white-400'>
             Released on {formattedDate}
         </time>
-        <p className='mb-4 text-base font-normal text-gray-500'>
+        <p className='mb-4 text-base font-normal text-white-500'>
             {repo.description ? repo.description.slice(0, 500) : "No description provided"}
         </p>
         {PROGRAMMING_LANGUAGES[repo.language] ? (

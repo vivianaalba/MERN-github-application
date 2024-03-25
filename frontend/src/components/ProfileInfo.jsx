@@ -24,10 +24,12 @@ const ProfileInfo = ({ userProfile }) => {
 		<div className='lg:w-1/3 w-full flex flex-col gap-2 lg:sticky md:top-10 mx-auto'>
 			<div className='bg-glass rounded-lg p-4'>
 				<div className='flex gap-3 items-center'>
+
 					{/* User Avatar */}
                     <a href={userProfile?.html_url} target='_blank' rel='noreferrer'>
                         <img src={userProfile?.avatar_url} className='rounded-md w-24 h-24 mb-2' alt='' />
                     </a>
+
                     {/* View on Github */}
                     <div className='flex gap-2 items-center flex-col'>
                         <LikeProfile userProfile={userProfile} />
@@ -41,6 +43,7 @@ const ProfileInfo = ({ userProfile }) => {
                         </a>
                     </div>
 				</div>
+
 				{/* User Bio */}
                 {userProfile?.bio ? (
                     <div className='flex items-center gap-2'>
@@ -69,14 +72,14 @@ const ProfileInfo = ({ userProfile }) => {
 
 				{/* Member Since Date */}
                 <div className='my-2'>
-                    <p className='text-gray-600 font-bold text-sm'>Member since</p>
+                    <p className='text-white-600 font-bold text-sm'>Member since</p>
                     <p>{memberSince}</p>
                 </div>
 
 				{/* Email Address */}
                 {userProfile?.email && (
                     <div className='my-2'>
-                    <p className='text-gray-600 font-bold text-sm'>Email address</p>
+                    <p className='text-white-600 font-bold text-sm'>Email address</p>
                         <p>{userProfile.email}</p>
                     </div>
                 )}
@@ -84,14 +87,14 @@ const ProfileInfo = ({ userProfile }) => {
 				{/* Full Name */}
                 {userProfile?.name && (
                     <div className='my-2'>
-                    <p className='text-gray-600 font-bold text-sm'>Full name</p>
+                    <p className='text-white-600 font-bold text-sm'>Full name</p>
                         <p>{userProfile?.name}</p>
                     </div>
                 )}
 
 				{/* Username */}
                 <div>
-                    <p>Username</p>
+                    <p className='text-white-600 font-bold text-sm'>Username</p>
                     <p>{userProfile?.login}</p>
                 </div>
 			</div>
